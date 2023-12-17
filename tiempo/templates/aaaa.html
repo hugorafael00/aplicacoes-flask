@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Tempo{% endblock %}</title>
+    <link rel="stylesheet" href="C:\Users\Claydson\Desktop\tiempo\style\estilo.css">
+</head>
+
+
+<body>
+    <div class="container">           
+        <form action="/" method="post">
+            <input autocomplete="off" placeholder="Cidade" type="text" name="city"></input><br>
+            <button type="submit">Pesquisar</button>
+        </form><br>
+        {% if tiempo %}
+            <h2>Weather in {{ request.form.get("city") }}</h2>
+            <p>Temperature: {{ tiempo["temperature"] }}°C</p>
+        {% endif %}
+    </div>
+
+</body>
+</html>
+
+
